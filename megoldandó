@@ -1,0 +1,21 @@
+//bekapcsolás, a mért hőmérséklet nagyobb, mint a minimum hőmérséklet és a checkbox bevan pipálva és a kimenet nem aktív akkor output true
+if(temperature4 > inputMessage.toFloat() && inputMessage2 == "true" && !triggerActive){
+
+  triggerActive = true;
+  digitalWrite(output, HIGH);
+  
+  
+//kikapcsolás, a mért hőmérséklet kisebb mint max hőmérséklet és checkbox true és a kimenet aktív
+else if((temperature4 < inputMessage3.toFloat()) && inputMessage2 == "true" && triggerActive) {
+  
+  triggerActive = false;
+  digitalWrite(output, LOW);
+}
+
+/*
+temperature4 = ez a mért hőmérséklet
+inputMessage.toFloat() = ez a form box-ba beírt hőmérsékleti érték(minimum érték)
+inputMessage2.toFloat() = ez a másik form box-ba írt hőmérséklet(maximum érték)
+inputMessage2 = ez egy checkbox aminek true vagy false a mérete
+triggerActive = a kimenet true vagy false
+*/
